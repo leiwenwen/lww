@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蓝色光标笔试题</title>
+    <style>
+        .header{
+            width: 850px;
+            height: 310px;
+            margin: 0 auto;
+            /*border: 1px solid red;*/
+        }
+         .db{
+            width: 170px;
+            height: 70px;
+            margin: 0 auto;
+        }
+        ul,li{
+            list-style: none;
+            margin: 0;
+            padding: 0}
+        a{text-decoration: none;}
+        #wrapper{
+            position: relative;
+            margin: 0px auto;
+            width: 850px;
+            height: 240px;}
+        #banner{
+            position:relative;
+            width: 850px;
+            height: 240px;
+            overflow: hidden;
+        }
+        .imgList{
+            position:relative;
+            width:2600px;
+            height:240px;
+            z-index: 10;
+            overflow: hidden;
+        }
+        .imgList li{
+            float:left;
+            display: inline;
+        }
+        .indexList{
+            position: absolute;
+            right: 49%;
+            bottom: 5px;
+            z-index: 30;
+        }
+        .indexList li{
+            float: left;
+            margin-right: 5px;
+            /*padding: 2px 4px;*/
+            background: #fff6f9;
+            /*cursor: pointer;*/
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+        }
+        .indexList .indexOn{
+            font-weight: bold;
+            color: white;
+            width: 20px;
+        }
+        .content1{
+            width: 850px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .c1_d1{
+            width: 680px;
+            margin: 0 auto;
+        }
+        .c1_d1 span:first-child{
+            font-size: 35px;
+            font-weight: bolder;
+            font-family: 微软雅黑;
+            display: inline-block;
+            width: 90px;
+        }
+        .c1_d1 span:nth-child(2){
+            background: black;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+        }
+        .c1_d1 span:nth-child(3){
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            border-radius: 8px;
+            border: 1px solid red;
+            margin: -10px 0 0 10px;
+            color: red;
+            font-size: 20px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .c1_d1 span:nth-child(4){
+            font-family: 微软雅黑;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        .c1_d2{
+            width:100%;
+            height: 100%;
+            border-top: 1px solid #b8b8b8;
+
+        }
+        .c1_d2 div:nth-child(1){
+            width: 40%;
+            height: 100%;
+            border-right: 1px solid #b8b8b8;
+            float: left;
+        }
+        .c1_d2 div:nth-child(2){
+            width: 59%;
+            height: 50%;
+            float: left;
+        }
+        .c1_d2 div:nth-child(3){
+            width: 59%;
+            height: 50%;
+            border-top: 1px solid #b8b8b8;
+            float: left;
+        }
+        .c1_d2 span{
+            margin: 20px 0 0 35px;
+        }
+        .c1_d2 span:nth-child(1){
+            font-size: 30px;
+            color: #0d79ba;
+            font-family:微软雅黑;
+
+        }
+        .c1_d2 span:nth-child(3){
+            font-size: 20px;
+            color: #aaa4b5;
+            font-family:微软雅黑; ;
+        }
+        .c1_d2 span:nth-child(5){
+            font-size: 20px;
+            color: #da6463;
+            font-family:微软雅黑;
+            border: 1px solid #ce0000;
+            border-radius: 5px;
+        }
+        .c1_img1{
+            width: 95%;
+            height: 160px;
+            margin: 50px 0 0 0;
+        }
+        span{
+            display: inline-block;
+        }
+        #c1_s1{
+            color: red;
+            margin: 20px 0 0 30px;
+        }
+        .c1_img2{
+            width: 160px;
+            height: 150px;
+            margin: -40px 0 0 120px;
+            position: absolute;
+        }
+        .c1_img3{
+            width: 170px;
+            height: 170px;
+            margin: 20px 0 0 10px;
+            float: left;
+        }
+        #c1_s2{
+            color: #b90000;
+            font-size: 30px;
+            font-family: 黑体;
+            margin: 90px 0 0 35px;
+            float: left;
+        }
+        .c1_s3{
+            color: #c40000;
+            font-size: 20px;
+            font-family:黑体;
+        }
+       .c1_d3{
+            width: 100%;
+            height: 15px;
+            background: gainsboro;
+        }
+        .content2{
+            width: 850px;
+            height: 400px;
+            margin: 0 auto;
+            margin-top: 70px;
+        }
+        .c2_u1{
+            list-style: none;
+            width: 700px;
+            margin: 0 auto;
+        }
+        .c2_u1 li{
+            float: left;
+            width: 90px;
+            font-weight: bolder;
+            font-size: 35px;
+            margin-right: 50px;
+        }
+        .u_d1{
+            width: 850px;
+            height:300px;
+            margin:45px 0 0 0px;
+            position: absolute;
+            background: white;
+        }
+        .d1_d1{
+            width: 49%;
+            height: 100%;
+            border-right: 1px solid gainsboro;
+            border-top: 1px solid gainsboro;
+            float: left;
+            font-size: 30px;
+        }
+        .i1{
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 200px;
+            height: 145px;
+            background: url("images/sp2.jpg")no-repeat;
+            text-align: right;
+            font-size: 20px;
+        }
+        .d1_d2{
+            width: 50%;
+            height: 100%;
+            float: left;
+            font-size: 30px;
+            border-top: 1px solid gainsboro;
+        }
+        .i2{
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 200px;
+            height: 145px;
+            background: url("images/sp2.jpg")0 -140px no-repeat;
+            text-align: right;
+            font-size: 20px;
+        }
+        .i1+span,.i2+span{
+            margin-left: 40px;
+        }
+        .footer{
+            width: 850px;
+            height: 100px;
+            margin: 0 auto;
+            background: #fdf4f7;
+        }
+        .banner{
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .banner li{
+            float: left;
+            width: 75px;
+            height: 70px;
+            margin-right: 60px;
+            line-height: 150px;
+            text-align: center;
+            font-family: 黑体;
+            font-size: 20px;
+            color: #8a8a8a;
+        }
+        .banner li:nth-child(1){
+            background: url("images/sp1.jpg")no-repeat;
+        }
+        .banner li:nth-child(1):hover{
+            background: url("images/sp1.jpg")0 -310px no-repeat;
+            color: red;
+        }
+        .banner li:nth-child(2){
+            background: url("images/sp1.jpg")0 -65px no-repeat;
+        }
+        .banner li:nth-child(2):hover{
+            background: url("images/sp1.jpg")0 -380px no-repeat;
+            color: red;
+        }
+        .banner li:nth-child(3){
+            background: url("images/sp1.jpg")0 -127px no-repeat;
+        }
+        .banner li:nth-child(3):hover{
+            background: url("images/sp1.jpg")0 -440px no-repeat;
+            color: red;
+        }
+        .banner li:nth-child(4){
+            background: url("images/sp1.jpg")0 -188px no-repeat;
+        }
+        .banner li:nth-child(4):hover{
+            background: url("images/sp1.jpg")0 -500px no-repeat;
+            color: red;
+        }
+        .banner li:nth-child(5){
+            background: url("images/sp1.jpg")0 -248px no-repeat;
+        }
+        .banner li:nth-child(5):hover{
+            background: url("images/sp1.jpg")0 -560px no-repeat;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="db"><img src="6-12/db.jpg"></div>
+    <div id="wrapper"><!-- 最外层部分 -->
+        <div id="banner"><!-- 轮播部分 -->
+            <ul class="imgList"><!-- 图片部分 -->
+                <li><a href="#"><img src="./images/1.jpg" alt="puss in boots1"></a></li>
+                <li><a href="#"><img src="./images/12.jpg" alt="puss in boots2"></a></li>
+                <li><a href="#"><img src="./images/13.jpg" alt="puss in boots3"></a></li>
+            </ul>
+            <div class="bg"></div> <!-- 图片底部背景层部分-->
+            <ul class="infoList"><!-- 图片左下角文字信息部分 -->
+                <li class="infoOn">puss in boots1</li>
+                <li>puss in boots2</li>
+                <li>puss in boots3</li>
+            </ul>
+            <ul class="indexList"><!-- 图片右下角序号部分 -->
+                <li class="indexOn"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content1">
+    <div class="c1_d1">
+        <span>头条</span>
+        <span></span>
+        <span>开湖</span>
+        <span>大闸蟹已捕捞，你的厨房准备好了么...</span>
+    </div><br>
+    <div class="c1_d2">
+        <div>
+            <span>手机大集合</span><br>
+            <span>是时候换个新手机了</span><br>
+            <span>给自己一点惊喜吧</span><br>
+            <img src="images/2.jpg" class="c1_img1">
+        </div>
+        <div>
+            <span id="c1_s1">吃点好的很有必要</span><br>
+            <span  class="c1_s2">秋冬吃货礼品清单</span>
+            <img src="images/4.jpg" class="c1_img2">
+        </div>
+        <div>
+            <img src="images/3.jpg" class="c1_img3">
+            <span id="c1_s2">拯救我的眼！</span><br>
+            <span  class="c1_s3">去黑眼圈/眼袋/淡化细纹</span>
+        </div>
+    </div>
+    <div class="c1_d3"></div>
+</div><br>
+<div class="content2">
+    <ul class="c2_u1">
+        <li class="li_1">人气</li>
+        <li class="li_1">新品</li>
+        <li class="li_1">最快</li>
+        <li class="li_1">高价</li>
+        <li class="li_1">低价</li>
+    </ul>
+    <div class="u_d1">
+     <div class="d1_d1">
+        <div class="i1">128G</div>
+        <span>iPhone7 128G 颜色随机 正品包邮</span>
+     </div>
+     <div  class="d1_d2">
+        <div  class="i2">32G</div>
+        <span>iPhone7 32G 颜色随机 正品包邮</span>
+     </div>
+    </div>
+    <div class="u_d1">
+        <div  class="d1_d2">
+            <div  class="i2">32G</div>
+            <span>iPhone7 32G 相似互粉 正品包邮</span>
+        </div>
+        <div class="d1_d1">
+            <div class="i1">128G</div>
+            <span>iPhone7 128G cjiwohi包邮</span>
+        </div>
+    </div>
+    <div class="u_d1">
+        <div  class="d1_d2">
+            <div  class="i2">32G</div>
+            <span>iPhone7 32G 颜色cmdhfiod包邮</span>
+        </div>
+        <div class="d1_d1">
+            <div class="i1">128G</div>
+            <span>iPhone7 128G 颜佛违反包邮</span>
+        </div>
+    </div>
+    <div class="u_d1">
+        <div  class="d1_d2">
+            <div  class="i2">32G</div>
+            <span>iPhone7 32G 颜色看动物的包邮</span>
+        </div>
+        <div class="d1_d1">
+            <div class="i1">128G</div>
+            <span>iPhone7 128G 颜色随机 正品包邮</span>
+        </div>
+    </div>
+    <div class="u_d1">
+        <div  class="d1_d2">
+            <div  class="i2">32G</div>
+            <span>iPhone7 32G 颜色随机 正品包邮</span>
+        </div>
+        <div class="d1_d1">
+            <div class="i1">128G</div>
+            <span>iPhone7 128G 颜色随机 正品包邮</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <ul class="banner">
+        <li class="f">首页</li>
+        <li class="f">揭晓</li>
+        <li class="f">发现</li>
+        <li class="f">清单</li>
+        <li class="f">我的</li>
+    </ul>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    window.onload=function(){
+        var ali=document.getElementsByClassName("li_1");
+        var abox=document.getElementsByClassName("u_d1");
+        for(var i=0;i<ali.length;i++){
+            ali[i].index=i;
+            ali[i].onclick=function(){
+                for(var j= 0;j<ali.length;j++) {
+                    ali[j].style.borderBottom="none";
+                    abox[j].style.display="none";
+                }
+                this.style.borderBottom="5px solid red";
+
+                abox[this.index].style.display="block";
+            }
+        }
+
+    }
+
+
+    var curIndex = 0, //当前index
+            imgArr = getElementsByClassName("imgList")[0].getElementsByTagName("li"), //获取图片组
+            imgLen = imgArr.length,
+            infoArr = getElementsByClassName("infoList")[0].getElementsByTagName("li"), //获取图片info组
+            indexArr = getElementsByClassName("indexList")[0].getElementsByTagName("li"); //获取控制index组
+    // 定时器自动变换2.5秒每次
+    var autoChange = setInterval(function(){
+        if(curIndex < imgLen -1){
+            curIndex ++;
+        }else{
+            curIndex = 0;
+        }
+        //调用变换处理函数
+        changeTo(curIndex);
+    },2500);
+
+    //清除定时器时候的重置定时器--封装
+    function autoChangeAgain(){
+        autoChange = setInterval(function(){
+            if(curIndex < imgLen -1){
+                curIndex ++;
+            }else{
+                curIndex = 0;
+            }
+            //调用变换处理函数
+            changeTo(curIndex);
+        },2500);
+    }
+
+    //调用添加事件处理
+    addEvent();
+
+    //给左右箭头和右下角的图片index添加事件处理
+    function addEvent(){
+        for(var i=0;i<imgLen;i++){
+            //闭包防止作用域内活动对象item的影响
+            (function(_i){
+                //鼠标滑过则清除定时器，并作变换处理
+                indexArr[_i].onmouseover = function(){
+                    clearTimeout(autoChange);
+                    changeTo(_i);
+                    curIndex = _i;
+                };
+                //鼠标滑出则重置定时器处理
+                indexArr[_i].onmouseout = function(){
+                    autoChangeAgain();
+                };
+            })(i);
+        }
+
+        //给左箭头prev添加上一个事件
+        var prev = document.getElementById("prev");
+        prev.onmouseover = function(){
+            //滑入清除定时器
+            clearInterval(autoChange);
+        };
+        prev.onclick = function(){
+            //根据curIndex进行上一个图片处理
+            curIndex = (curIndex > 0) ? (--curIndex) : (imgLen - 1);
+            changeTo(curIndex);
+        };
+        prev.onmouseout = function(){
+            //滑出则重置定时器
+            autoChangeAgain();
+        };
+
+        //给右箭头next添加下一个事件
+        var next = document.getElementById("next");
+        next.onmouseover = function(){
+            clearInterval(autoChange);
+        };
+        next.onclick = function(){
+            curIndex = (curIndex < imgLen - 1) ? (++curIndex) : 0;
+            changeTo(curIndex);
+        };
+        next.onmouseout = function(){
+            autoChangeAgain();
+        };
+    }
+
+    //左右切换处理函数
+    function changeTo(num){
+        //设置image
+        var imgList = getElementsByClassName("imgList")[0];
+        goLeft(imgList,num*870); //左移一定距离
+        //设置image 的 info
+        var curInfo = getElementsByClassName("infoOn")[0];
+        removeClass(curInfo,"infoOn");
+        addClass(infoArr[num],"infoOn");
+        //设置image的控制下标 index
+        var _curIndex = getElementsByClassName("indexOn")[0];
+        removeClass(_curIndex,"indexOn");
+        addClass(indexArr[num],"indexOn");
+    }
+
+
+    //图片组相对原始左移dist px距离
+    function goLeft(elem,dist){
+        if(dist == 870){ //第一次时设置left为0px 或者直接使用内嵌法 style="left:0;"
+            elem.style.left = "0px";
+        }
+        var toLeft; //判断图片移动方向是否为左
+        dist = dist + parseInt(elem.style.left); //图片组相对当前移动距离
+        if(dist<0){
+            toLeft = false;
+            dist = Math.abs(dist);
+        }else{
+            toLeft = true;
+        }
+        for(var i=0;i<= dist/20;i++){ //这里设定缓慢移动，10阶每阶40px
+            (function(_i){
+                var pos = parseInt(elem.style.left); //获取当前left
+                setTimeout(function(){
+                    pos += (toLeft)? -(_i * 20) : (_i * 20); //根据toLeft值指定图片组位置改变
+                    //console.log(pos);
+                    elem.style.left = pos + "px";
+                },_i * 25); //每阶间隔50毫秒
+            })(i);
+        }
+    }
+
+    //通过class获取节点
+    function getElementsByClassName(className){
+        var classArr = [];
+        var tags = document.getElementsByTagName('*');
+        for(var item in tags){
+            if(tags[item].nodeType == 1){
+                if(tags[item].getAttribute('class') == className){
+                    classArr.push(tags[item]);
+                }
+            }
+        }
+        return classArr; //返回
+    }
+
+    // 判断obj是否有此class
+    function hasClass(obj,cls){  //class位于单词边界
+        return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+    }
+    //给 obj添加class
+    function addClass(obj,cls){
+        if(!this.hasClass(obj,cls)){
+            obj.className += cls;
+        }
+    }
+    //移除obj对应的class
+    function removeClass(obj,cls){
+        if(hasClass(obj,cls)){
+            var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+            obj.className = obj.className.replace(reg,'');
+        }
+    }
+
+</script>
